@@ -1,6 +1,6 @@
 const express = require("express");
 const server = express();
-
+const port = process.env.PORT || 3000
 server.use(express.static("public"));
 
 server.get("/guess/:word", (req, res) => {
@@ -23,6 +23,6 @@ server.get("/guess/:word", (req, res) => {
   res.json(answer);
 });
 
-server.listen(5500, () => {
+server.listen(port, () => {
   console.log("its working boys");
 });
